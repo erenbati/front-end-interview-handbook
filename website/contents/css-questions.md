@@ -101,8 +101,12 @@ A BFC is an HTML box that satisfies at least one of the following conditions:
 
 - The value of `float` is not `none`.
 - The value of `position` is neither `static` nor `relative`.
-- The value of `display` is `table-cell`, `table-caption`, `inline-block`, `flex`, or `inline-flex`, `grid`, or `inline-grid`.
+- The value of `display` is `table-cell`, `table-caption`, or `inline-block`.
+- The element is a flex item (a direct child of an element with `display: flex` or `inline-flex`) and is not itself a flex, grid, or table container.
+- The element is a grid item (a direct child of an element with `display: grid` or `inline-grid`) and is not itself a flex, grid, or table container.
 - The value of `overflow` is not `visible`.
+
+A flex or grid container establishes a flex or grid formatting context for its children rather than a block formatting context.
 
 In a BFC, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch).
 
